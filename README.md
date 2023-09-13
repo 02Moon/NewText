@@ -1,2 +1,2 @@
 # NewText
-First Creat 2023-09-10
+First Create 2023-09-10
