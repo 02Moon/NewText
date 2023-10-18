@@ -6,3 +6,6 @@ __Create PythonScraping Lesson1__ `2023-09-20`
 __Create Lesson2-(Object.py, news.py)__ `2023-10-10`
 <br>
 __Create JAVA/Basic.md & array.md__ `2023-10-18`
+
+
+![计算机科学图](https://github.com/02Moon/NewText/blob/main/11.png)
