@@ -1,7 +1,7 @@
 > JVM	`Java Virtual Machine(Java 虚拟机)`
->
+> 
 > JDK	`Java Development Kit(Java 开发工具包)`
->
+> 
 > JRE	`Java Runtime Environment(Java 运行环境)`
 
 ### 访问修饰符
@@ -103,81 +103,79 @@ public class TryDemo {
 
 ### Stream流
 
-> ```java
-> List<String> stringCollection = new ArrayList<>();
-> stringCollection.add("ddd2");
-> stringCollection.add("aaa2");
-> stringCollection.add("bbb1");
-> stringCollection.add("aaa1");
-> stringCollection.add("bbb3");
-> stringCollection.add("ccc");
-> stringCollection.add("bbb2");
-> stringCollection.add("ddd1");
-> ```
->
-> 中间操作
->
-> - `filter(Predicate<T> predicate)`：过滤符合条件的元素。
->
-> ```java
-> stringCollection
->     .stream()
->     .filter((s) -> s.startsWith("a"))
->     .forEach(System.out::println);
-> 
-> // "aaa2", "aaa1"
-> ```
->
-> - `map(Function<T, R> mapper)`：将元素进行映射转换。
->
-> ```java
-> stringCollection
->     .stream()
->     .map(String::toUpperCase)
->     .sorted((a, b) -> b.compareTo(a))
->     .forEach(System.out::println);
-> 
-> // "DDD2", "DDD1", "CCC", "BBB3", "BBB2", "AAA2", "AAA1"
-> ```
->
-> - `sorted(Comparator<T> comparator)`：对元素进行排序。
-> - `distinct()`：去除重复元素。
-> - `limit(long maxSize)`：限制元素数量。
->
-> 终端操作
->
-> - forEach(Consumer<T> action)：对每个元素执行指定操作。
-> - toArray()：将Stream流转换为数组。
->  - reduce(T identity, BinaryOperator<T> accumulator)：对元素进行累加操作。
->
-> ```java
-> Optional<String> reduced =
->     stringCollection
->         .stream()
->         .sorted()
->         .reduce((s1, s2) -> s1 + "#" + s2);
-> 
-> reduced.ifPresent(System.out::println);
-> // "aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2"
-> ```
->
->  - collect(Collector<T, A, R> collector)：将元素收集到集合中。
->  - count()：统计元素数量。
-> - anyMatch(Predicate<T> predicate)：判断是否存在符合条件的元素。
->  - allMatch(Predicate<T> predicate)：判断是否所有元素都符合条件。
->  - noneMatch(Predicate<T> predicate)：判断是否不存在符合条件的元素。
->  - findFirst()：返回第一个元素。
->  - findAny()：返回任意一个元素
->  - sorted(Comparator<T> comparator)：对元素进行排序。
->
-> ```java
-> stringCollection
->     .stream()
->     .sorted()
->     .filter((s) -> s.startsWith("a"))
->     .forEach(System.out::println);
-> 
-> // "aaa1", "aaa2"
-> ```
->
-> 
+```java
+List<String> stringCollection = new ArrayList<>();
+stringCollection.add("ddd2");
+stringCollection.add("aaa2");
+stringCollection.add("bbb1");
+stringCollection.add("aaa1");
+stringCollection.add("bbb3");
+stringCollection.add("ccc");
+stringCollection.add("bbb2");
+stringCollection.add("ddd1");
+```
+
+中间操作
+
+- `filter(Predicate<T> predicate)`：过滤符合条件的元素。
+
+```java
+stringCollection
+    .stream()
+    .filter((s) -> s.startsWith("a"))
+    .forEach(System.out::println);
+
+// "aaa2", "aaa1"
+```
+
+- `map(Function<T, R> mapper)`：将元素进行映射转换。
+
+```java
+stringCollection
+    .stream()
+    .map(String::toUpperCase)
+    .sorted((a, b) -> b.compareTo(a))
+    .forEach(System.out::println);
+
+// "DDD2", "DDD1", "CCC", "BBB3", "BBB2", "AAA2", "AAA1"
+```
+
+- `sorted(Comparator<T> comparator)`：对元素进行排序。
+- `distinct()`：去除重复元素。
+- `limit(long maxSize)`：限制元素数量。
+
+终端操作
+
+- forEach(Consumer<T> action)：对每个元素执行指定操作。
+- toArray()：将Stream流转换为数组。
+ - reduce(T identity, BinaryOperator<T> accumulator)：对元素进行累加操作。
+
+```java
+Optional<String> reduced =
+    stringCollection
+        .stream()
+        .sorted()
+        .reduce((s1, s2) -> s1 + "#" + s2);
+
+reduced.ifPresent(System.out::println);
+// "aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2"
+```
+
+ - collect(Collector<T, A, R> collector)：将元素收集到集合中。
+ - count()：统计元素数量。
+- anyMatch(Predicate<T> predicate)：判断是否存在符合条件的元素。
+ - allMatch(Predicate<T> predicate)：判断是否所有元素都符合条件。
+ - noneMatch(Predicate<T> predicate)：判断是否不存在符合条件的元素。
+ - findFirst()：返回第一个元素。
+ - findAny()：返回任意一个元素
+ - sorted(Comparator<T> comparator)：对元素进行排序。
+
+```java
+stringCollection
+    .stream()
+    .sorted()
+    .filter((s) -> s.startsWith("a"))
+    .forEach(System.out::println);
+
+// "aaa1", "aaa2"
+```
