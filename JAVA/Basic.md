@@ -1,5 +1,7 @@
 > JVM	`Java Virtual Machine(Java 虚拟机)`
+>
 > JDK	`Java Development Kit(Java 开发工具包)`
+>
 > JRE	`Java Runtime Environment(Java 运行环境)`
 
 ### 访问修饰符
