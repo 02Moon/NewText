@@ -42,3 +42,10 @@ Free GPT_API Url
 https://github.com/sunsky89757/FreeGPTapi?tab=readme-ov-file
 ```
 
+Jupyter显示所有输出
+```Python
+import pandas as pd
+pd.set_option('display.max_rows', None)
+print(df)
+```
+
